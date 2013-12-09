@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:STapp="http://schemas.android.com/apk/res-auto">
+    <item
+            android:id="@+id/item3"
+            STapp:showAsAction="always"
+            android:title="@string/item3">
+    </item>
+    <item
+            android:id="@+id/item1"
+            android:icon="@drawable/ic_action_av_stop"
+            STapp:showAsAction="always"
+            android:title="@string/item1">
+    </item>
+
+    <item
+            android:id="@+id/item4"
+            STapp:showAsAction="never"
+            android:title="@string/item4">
+    </item>
+
+</menu>

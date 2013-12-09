@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.RSSReader"
+          android:versionCode="1"
+          android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="10"
+            android:targetSdkVersion="19"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <application android:label="@string/app_name"
+                 android:icon="@drawable/ic_launcher"
+                 android:name=".InApplication">
+
+        <activity android:name="MyActivity"
+                  android:label="@string/app_name"
+                  android:theme="@style/Theme.Example"
+                  >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_display"
+                  android:name=".NewActivity"
+                  android:theme="@style/Theme.Example"
+                  android:parentActivityName="com.example.RSSReader.MyActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.example.RSSReader.MyActivity"/>
+
+        </activity>
+        <activity
+                android:name=".FavoriteElements"
+                android:theme="@style/Theme.Example"
+                android:parentActivityName="com.example.RSSReader.MyActivity"
+                >
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.example.RSSReader.MyActivity"/>
+        </activity>
+        <activity
+                android:name=".FavoriteShowElements"
+                android:theme="@style/Theme.Example"
+                android:parentActivityName="com.example.RSSReader.FavoriteElementsActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.example.RSSReader.FavoriteElementsActivity"/>
+        </activity>
+        <service
+                android:enabled="true"
+                android:name=".NotifService"
+                android:icon="@drawable/ic_stat_av_add_to_queue"
+                android:label="@string/service_name">
+        </service>
+
+        <provider
+                android:name=".Provider"
+                android:authorities="com.example.RSSReader"
+                android:exported="true"/>
+
+    </application>
+
+</manifest>
